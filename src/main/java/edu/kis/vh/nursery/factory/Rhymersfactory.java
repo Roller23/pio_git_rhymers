@@ -1,17 +1,17 @@
 package edu.kis.vh.nursery.factory;
 
-import edu.kis.vh.nursery.defaultCountingOutRhymer;
+import edu.kis.vh.nursery.DefaultCountingOutRhymer;
 
 	public interface Rhymersfactory {
 	
-	public defaultCountingOutRhymer GetStandardRhymer();
-	
-	public defaultCountingOutRhymer GetFalseRhymer();
-	
-	public defaultCountingOutRhymer GetFIFORhymer();
-	
-	public defaultCountingOutRhymer GetHanoiRhymer();
+		public DefaultCountingOutRhymer getStandardRhymer();
+		
+		public DefaultCountingOutRhymer getFalseRhymer();
+		
+		public DefaultCountingOutRhymer getFIFORhymer();
+		
+		public DefaultCountingOutRhymer getHanoiRhymer();
 
-	// w moim edytorze alt + strzałki przełącza się między zakładkami w VS Code
+		// w moim edytorze alt + strzałki przełącza się między zakładkami w VS Code
 		
 	}
