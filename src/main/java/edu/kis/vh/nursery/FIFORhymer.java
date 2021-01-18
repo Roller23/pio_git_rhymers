@@ -1,9 +1,16 @@
 package edu.kis.vh.nursery;
 
+/**
+ * Rhymer implementing a FIFO queue
+ */
+
 public class FIFORhymer extends DefaultCountingOutRhymer {
 
 	private DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
-	
+	/**
+	 * @param none
+	 * @return int
+	 */
 	@Override
 	protected int countOut() {
 		while (!callCheck())

@@ -9,7 +9,7 @@ public class DefaultCountingOutRhymer {
 
 	private int total = -1;
 
-	protected void countIn(int in) {
+	protected void countIn(final int in) {
 		if (!isFull())
 			NUMBERS[++total] = in;
 	}
