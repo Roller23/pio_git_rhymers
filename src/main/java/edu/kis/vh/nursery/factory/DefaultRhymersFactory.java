@@ -16,6 +16,8 @@ public class DefaultRhymersFactory implements Rhymersfactory {
 		return new DefaultCountingOutRhymer();
 	}
 
+	// TODO: Why do getStandardRhymer and getFalseRhymer return the same thing
+
 	@Override
 	public DefaultCountingOutRhymer getFIFORhymer() {
 		return new FIFORhymer();

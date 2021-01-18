@@ -6,6 +6,7 @@ import java.util.Random;
 
 class RhymersDemo {
 	private static int testRhymers(DefaultCountingOutRhymer[] rhymers) {
+		// TODO: Replace those seemingly arbitrary numbers
 		for (int i = 1; i < 15; i++)
 			for (int j = 0; j < 3; j++)
 				rhymers[j].countIn(i);

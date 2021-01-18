@@ -1,5 +1,7 @@
 package edu.kis.vh.nursery.list;
 
+// TODO: Linked list is not used anywhere (delete maybe?)
+
 public class IntLinkedList {
 
 	private Node last;
