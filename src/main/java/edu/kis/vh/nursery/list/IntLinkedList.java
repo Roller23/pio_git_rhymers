@@ -1,9 +1,10 @@
 package edu.kis.vh.nursery.list;
 
+// TODO: Linked list is not used anywhere (delete maybe?)
+
 public class IntLinkedList {
 
-	Node last;
-	int i;
+	private Node last;
 
 	public void push(int i) {
 		if (last == null)
