@@ -4,37 +4,39 @@ public class DefaultCountingOutRhymer {
 
 	private static final int LOWER_BOUND = -1;
 	private static final int MAX_SIZE = 12;
+	private static final int DEFAULT_TOTAL = -1;
+	private static final int NOT_FOUND = -1;
 
-	private final int[] NUMBERS = new int[MAX_SIZE];
+	private final int[] numbers = new int[MAX_SIZE];
 
-	private int total = -1;
+	private int total = DEFAULT_TOTAL;
 
-	protected void countIn(final int in) {
+	public void countIn(final int in) {
 		if (!isFull())
-			NUMBERS[++total] = in;
+		numbers[++total] = in;
 	}
 
-	protected boolean callCheck() {
+	public boolean callCheck() {
 		return total == LOWER_BOUND;
 	}
 		
-	protected boolean isFull() {
+	public boolean isFull() {
 		return total == MAX_SIZE-1;
 	}
 		
-	protected int peekaboo() {
+	public int peekaboo() {
 		if (callCheck())
-			return -1;
-		return NUMBERS[total];
+			return NOT_FOUND;
+		return numbers[total];
 	}
 			
-	protected int countOut() {
+	public int countOut() {
 		if (callCheck())
-			return -1;
-		return NUMBERS[total--];
+			return NOT_FOUND;
+		return numbers[total--];
 	}
 
-	protected int getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
