@@ -27,3 +27,7 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
 		return ret;
 	}
 }
+
+
+// IntArrayStack appears to be better suited for this task
+// because it never needs to insert values in the middle of the collection
