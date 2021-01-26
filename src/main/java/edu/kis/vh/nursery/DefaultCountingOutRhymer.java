@@ -9,15 +9,12 @@ public class DefaultCountingOutRhymer {
 	private static final int DEFAULT_TOTAL = -1;
 	private static final int NOT_FOUND = -1;
 
-	// private final int[] numbers = new int[MAX_SIZE];
-
 	private IntLinkedList numbers = new IntLinkedList();
 
 	private int total = DEFAULT_TOTAL;
 
 	public void countIn(final int in) {
 		if (!isFull()) {
-			// numbers[++total] = in;
 			numbers.push(in);
 			total++;
 		}
@@ -34,14 +31,12 @@ public class DefaultCountingOutRhymer {
 	public int peekaboo() {
 		if (callCheck())
 			return NOT_FOUND;
-		// return numbers[total];
 		return numbers.top();
 	}
 			
 	public int countOut() {
 		if (callCheck())
 			return NOT_FOUND;
-		// return numbers[total--];
 		total--;
 		return numbers.pop();
 	}
