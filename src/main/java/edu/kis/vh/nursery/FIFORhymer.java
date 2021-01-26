@@ -1,12 +1,15 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.storage.IntArrayStack;
+import edu.kis.vh.nursery.storage.IntStorage;
+
 /**
  * Rhymer implementing a FIFO queue
  */
 
 public class FIFORhymer extends DefaultCountingOutRhymer {
 
-	private final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+	private final IntStorage temp = new IntArrayStack();
 	/**
 	 * @param none
 	 * @return int
@@ -14,12 +17,12 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
 	@Override
 	public int countOut() {
 		while (!callCheck())
-			temp.countIn(super.countOut());
+			temp.push(super.countOut());
 		
-		int ret = temp.countOut();
+		int ret = temp.pop();
 		
-		while (!temp.callCheck())
-			countIn(temp.countOut());
+		while (!temp.isEmpty())
+			countIn(temp.pop());
 		
 		return ret;
 	}
