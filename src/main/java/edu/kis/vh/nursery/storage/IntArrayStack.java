@@ -4,7 +4,7 @@ public class IntArrayStack implements IntStorage {
   private static final int LOWER_BOUND = -1;
 	private static final int MAX_SIZE = 12;
 	private static final int DEFAULT_TOTAL = -1;
-	private static final int NOT_FOUND = -1;
+	private static final int NOT_FOUND = 0;
 
 	private final int[] numbers = new int[MAX_SIZE];
 
