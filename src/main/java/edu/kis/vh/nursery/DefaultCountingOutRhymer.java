@@ -1,17 +1,18 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.list.IntArrayStack;
+import edu.kis.vh.nursery.storage.IntArrayStack;
+import edu.kis.vh.nursery.storage.IntStorage;
 
 public class DefaultCountingOutRhymer {
 
-	private final IntArrayStack numbers = new IntArrayStack();
+	private final IntStorage numbers = new IntArrayStack();
 
 		public void countIn(final int in) {
-			numbers.countIn(in);
+			numbers.push(in);
 		}
 
 		public boolean callCheck() {
-			return numbers.callCheck();
+			return numbers.isEmpty();
 		}
 			
 		public boolean isFull() {
@@ -19,15 +20,15 @@ public class DefaultCountingOutRhymer {
 		}
 			
 		public int peekaboo() {
-			return numbers.peekaboo();
+			return numbers.top();
 		}
 				
 		public int countOut() {
-			return numbers.countOut();
+			return numbers.pop();
 		}
 
 		public int getTotal() {
-			return numbers.getTotal();
+			return numbers.size();
 		}
 
 }

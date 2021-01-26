@@ -1,10 +1,11 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.storage;
 
-public class IntLinkedList {
+public class IntLinkedList implements IntStorage {
 
 	public IntLinkedList() {}
 
 	private Node last;
+	private int listSize = 0;
 
 	public void push(int i) {
 		if (last == null)
@@ -14,6 +15,7 @@ public class IntLinkedList {
 			last.next.prev = last;
 			last = last.next;
 		}
+		listSize++;
 	}
 
 	public boolean isEmpty() {
@@ -33,9 +35,14 @@ public class IntLinkedList {
 	public int pop() {
 		if (isEmpty())
 			return -1;
+		listSize--;
 		int ret = last.getValue();
 		last = last.prev;
 		return ret;
+	}
+
+	public int size() {
+		return listSize;
 	}
 
 }

@@ -1,6 +1,6 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.storage;
 
-public class IntArrayStack {
+public class IntArrayStack implements IntStorage {
   private static final int LOWER_BOUND = -1;
 	private static final int MAX_SIZE = 12;
 	private static final int DEFAULT_TOTAL = -1;
@@ -37,5 +37,26 @@ public class IntArrayStack {
 
 	public int getTotal() {
 		return total;
-	} 
+	}
+
+	public void push(int in) {
+		countIn(in);
+	}
+
+	public int top() {
+		return peekaboo();
+	}
+
+	public int pop() {
+		return countOut();
+	}
+
+	public int size() {
+		return total;
+	}
+
+	public boolean isEmpty() {
+		return callCheck();
+	}
+
 }
