@@ -4,6 +4,10 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
+	public IntLinkedList() {
+		
+	}
+
 	private Node last;
 
 	public void push(int i) {

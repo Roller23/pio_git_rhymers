@@ -1,5 +1,7 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
+
 public class DefaultCountingOutRhymer {
 
 	private static final int LOWER_BOUND = -1;
@@ -7,13 +9,18 @@ public class DefaultCountingOutRhymer {
 	private static final int DEFAULT_TOTAL = -1;
 	private static final int NOT_FOUND = -1;
 
-	private final int[] numbers = new int[MAX_SIZE];
+	// private final int[] numbers = new int[MAX_SIZE];
+
+	private IntLinkedList numbers = new IntLinkedList();
 
 	private int total = DEFAULT_TOTAL;
 
 	public void countIn(final int in) {
-		if (!isFull())
-		numbers[++total] = in;
+		if (!isFull()) {
+			// numbers[++total] = in;
+			numbers.push(in);
+			total++;
+		}
 	}
 
 	public boolean callCheck() {
@@ -21,19 +28,22 @@ public class DefaultCountingOutRhymer {
 	}
 		
 	public boolean isFull() {
-		return total == MAX_SIZE-1;
+		return total == MAX_SIZE - 1;
 	}
 		
 	public int peekaboo() {
 		if (callCheck())
 			return NOT_FOUND;
-		return numbers[total];
+		// return numbers[total];
+		return numbers.top();
 	}
 			
 	public int countOut() {
 		if (callCheck())
 			return NOT_FOUND;
-		return numbers[total--];
+		// return numbers[total--];
+		total--;
+		return numbers.pop();
 	}
 
 	public int getTotal() {
